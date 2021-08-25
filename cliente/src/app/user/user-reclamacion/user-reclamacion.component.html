@@ -1,0 +1,164 @@
+<div class="bg-user">
+
+</div>
+<div class="inicio pt-lg-5 pb-lg-5">
+    <div class="container" style="box-shadow: 1px 1px 5px #00000038;">
+        <div class="row bg-success justify-content-center position-relative">
+            <div class="col-md-11 col-12">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 col-4 text-center">
+                        <img class="position-relative" src="assets/uncp-logo.png" alt="" height="100" style="top: 50%; transform: translateY(-50%);">
+                    </div>
+                    <div class="col-md-10 col-sm-9 col-8">
+                        <div class="pt-5 pb-5">
+                            <h1 class="text-white d-inline-block mb-2">Libro de reclamaciones UNCP</h1>
+                            <p class="text-white mb-1">Módulo de atención de reclamos y quejas</p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="row pt-4 pb-4 bg-white justify-content-center">
+            <div class="col-11">
+                <p><span class="text-danger">*</span>Obligatorio</p>
+                <h5>
+                    Universidad Nacional del Centro del Perú <br>
+                    RUC: 20145561095 <br>
+                    Av. Mariscal Castilla N° 3909 - Huancayo
+                </h5>
+            </div>
+            <form class="col-11 mt-3" #modalForm="ngForm" enctype="multipart/form-data" (submit)="submit(modalForm)" novalidate="">
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">1. Nombres y Apellidos<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <input type="text" class="form-control w-100 pe-5" style="max-width: 100%;" aria-label="Escriba su respuesta" placeholder="Escriba su respuesta" [(ngModel)]="user.nombre" name="nombre" #nombre required>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">2. Dirección<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <input type="text" class="form-control w-100 pe-5" style="max-width: 100%;" aria-label="Escriba su respuesta" placeholder="Escriba su respuesta" [(ngModel)]="user.direccion" name="direccion" #direccion required>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">3. DNI / CE<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <input type="text" class="form-control w-100 pe-5" style="max-width: 100%;" aria-label="Escriba su respuesta" placeholder="Escriba su respuesta" [(ngModel)]="user.nro_doc" name="nro_doc" #nro_doc required>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">4. Teléfono<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <input type="text" class="form-control w-100 pe-5" style="max-width: 100%;" aria-label="Escriba su respuesta" placeholder="Escriba su respuesta" [(ngModel)]="user.telefono" name="telefono" #telefono required>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">5. Correo electrónico<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <input type="text" class="form-control w-100 pe-5" style="max-width: 100%;" aria-label="Escriba su respuesta" placeholder="Escriba su respuesta" [(ngModel)]="user.email" name="email" #email required>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">6. ¿Mayor de edad?<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="flexRadioDefault1" (click)="user.adulto='1'"  name="adulto" #accion required [checked]="user.adulto=='1' ? true : false">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="flexRadioDefault2" (click)="user.adulto='0'"  name="adulto" #accion required [checked]="user.adulto=='0' ? true : false">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">7. Tipo de incidencia<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="flexRadioDefault3" (click)="user.incidencia='0'"  name="incidencia" #incidencia required [checked]="user.incidencia=='0' ? true : false">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Queja
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="flexRadioDefault4" (click)="user.incidencia='1'"  name="incidencia" #incidencia required [checked]="user.incidencia=='1' ? true : false">
+                            <label class="form-check-label" for="flexRadioDefault4">
+                                Reclamo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">8. Dependencia involucrada<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4 pt-1">
+                        <select class="form-select w-100 pe-5" style="max-width: 100%;" aria-label="Default select example" placeholder="Selecciona la respuesta" [(ngModel)]="user.dependencia" name="dependencia" #dependencia required>
+                            <option value="" selected disabled>Selecciona la respuesta</option>
+                            <option value="{{data.nombre}}" *ngFor="let data of dependencias; let i = index">{{data.nombre}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="staticEmail" class="col-sm-12 col-form-label">9. Detalle<span class="text-danger">*</span></label>
+                    <div class="col-sm-12 ps-4">
+                        <p class="text-muted fst-italic">Especifique los detalles de su queja o reclamo.</p>
+                        <textarea type="email" class="form-control" id="exampleFormControlInput1" minlength="12" placeholder="Escriba su respuesta" rows="5" [(ngModel)]="user.detalle" name="detalle" #detalle required></textarea> 
+                    </div>
+                </div>
+                <div class="row mb-4 text-center">
+                    <ngx-recaptcha2 #captchaElem 
+                        [siteKey]="siteKey"
+                        (success)="capchaSucces($event)"
+                        (reset)="capchaReset()"
+                    >
+                    </ngx-recaptcha2>
+                </div>
+                <div class="row mt-5 mb-4">
+                    <div class="col-12 text-center">
+                        <button *ngIf="btn" type="submit" class="btn btn-danger ps-5 pe-5" [disabled]="!modalForm.form.valid">Enviar</button>
+                        <button *ngIf="!btn" type="button" class="btn btn-danger ps-5 pe-5" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Cargando...</button>
+                    </div>
+                </div>
+                <div class="col-12" id="state_bar">
+             
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+  
+<!-- Modal -->
+<div class="modal fade" id="modal_confirm" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <div class="alert alert-warning w-100 mb-0" role="alert">
+                <h5 class="modal-title text-center mb-0" id="exampleModalLabel">Atención</h5>
+            </div>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-4 pb-4">
+            <div class="w-100 text-center mb-3">
+                <span class="text-center text-warning">
+                    <i class="fas fa-5x fa-exclamation-triangle"></i>
+                </span>
+            </div>
+            <div class="alert alert-success w-100 mb-0" role="alert">
+                Se ha registrado su reclamo/queja correctamente. Puede consultar el estado de la misma en el boton de abajo: <br>
+                ¡Si desea una copia de su caso, guarde el siguiente enlace o imprima el siguiente documento!
+            </div>
+            <div class="d-block text-center mt-3" id="btn_seg">
+                <a href="#" class="btn btn-success d-inline ps-5 pe-5" target="_blank">Ver Detalles</a>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

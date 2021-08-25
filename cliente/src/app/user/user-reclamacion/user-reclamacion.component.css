@@ -1,0 +1,24 @@
+.inicio{
+    position: relative;
+    height: fit-content;
+ }
+ 
+ .bg-user{
+     position: fixed;
+     background: url("../../../assets/bg-user.jpg");
+     background-position: center;
+     background-size: cover;
+     width: 100%;
+     height: 100%;
+ }
+ 
+ 
+ 
+ 
+ @media (max-width: 995px){
+     .inicio > .container{
+         max-width: 100% !important;
+     }
+ }
+ 
+ 
