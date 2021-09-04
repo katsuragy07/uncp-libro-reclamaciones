@@ -1,6 +1,6 @@
 
 export class GlobalConstants {
 
-    public static apiURL: string = "https://localhost/www/SistemaLibroReclamacionesUNCP/server/";
+    public static apiURL: string = "http://localhost/www/SistemaLibroReclamacionesUNCP/server/";
  
 }

@@ -59,7 +59,7 @@ export class UserReclamacionComponent implements OnInit {
           //console.log(res)
           if(res.res==200){
             this.msg_res = res.id;
-            $("#btn_seg").html(`<a href="https://gestionuncp.edu.pe/tramite_dev/vecinos/seguimiento.php?pk=${res.id}" class="btn btn-success d-inline ps-5 pe-5" target="_blank">Ver Detalles</a>`);
+            $("#btn_seg").html(`<a href="https://gestionuncp.edu.pe/tramite/vecinos/seguimiento.php?pk=${res.id}" class="btn btn-success d-inline ps-5 pe-5" target="_blank">Ver Detalles</a>`);
             $("#state_bar").html(``);
             $("#modal_confirm").modal('show');
             this.resetForm(form);
